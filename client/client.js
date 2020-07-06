@@ -6,6 +6,8 @@ const formRef = document.querySelector("form");
 const loadingRef = document.querySelector(".loading");
 loadingRef.style.display = "none";
 
+const API_URL = "http://localhost:5000/mews";
+
 formRef.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -13,7 +15,7 @@ formRef.addEventListener("submit", (e) => {
     const nameData = formData.get("name");
     const contentData = formData.get("content");
 
-    const cat = {
+    const mew = {
         nameData,
         contentData,
     };
@@ -21,4 +23,13 @@ formRef.addEventListener("submit", (e) => {
     // displaying loading element & hiding form element
     formRef.style.display = "none";
     loadingRef.style.display = "";
+
+    // posting data to server API
+    fetch(API_URL, {
+        method: "POST",
+        body: JSON.stringify(mew),
+        headers: {
+            "content-type": "application/json",
+        },
+    });
 });
