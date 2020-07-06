@@ -12,11 +12,11 @@ formRef.addEventListener("submit", (e) => {
     const formData = new FormData(formRef);
     const nameData = formData.get("name");
     const contentData = formData.get("content");
+
     const cat = {
         nameData,
         contentData,
     };
-    console.log(cat);
 
     // displaying loading element & hiding form element
     formRef.style.display = "none";
