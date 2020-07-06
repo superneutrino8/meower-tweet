@@ -4,9 +4,13 @@ const formRef = document.querySelector("form");
 
 // hiding loading element
 const loadingRef = document.querySelector(".loading");
-loadingRef.style.display = "none";
+loadingRef.style.display = "";
+
+const mewsRef = document.querySelector(".mews");
 
 const API_URL = "http://localhost:5000/mews";
+
+loadAllMews();
 
 formRef.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -37,6 +41,34 @@ formRef.addEventListener("submit", (e) => {
             console.log(createdMew);
             formRef.reset();
             formRef.style.display = "";
-            loadingRef.style.display = "none";
+            loadAllMews();
         });
 });
+
+function loadAllMews() {
+    mewsRef.innerHTML = "";
+    fetch(API_URL)
+        .then((res) => res.json())
+        .then((mews) => {
+            mews.reverse();
+            mews.forEach((mew) => {
+                const div = document.createElement("div");
+
+                const header = document.createElement("h3");
+                header.textContent = mew.name;
+
+                const contents = document.createElement("p");
+                contents.textContent = mew.content;
+
+                const date = document.createElement("small");
+                date.textContent = new Date(mew.created);
+
+                div.appendChild(header);
+                div.appendChild(contents);
+                div.appendChild(date);
+
+                mewsRef.appendChild(div);
+            });
+            loadingRef.style.display = "none";
+        });
+}

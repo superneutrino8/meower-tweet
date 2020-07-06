@@ -18,6 +18,12 @@ router.get("/", (req, res) => {
     res.send("Hello");
 });
 
+router.get("/mews", (req, res) => {
+    mews.find().then((mews) => {
+        res.json(mews);
+    });
+});
+
 router.post("/mews", (req, res) => {
     console.log(req.body);
     if (isValidMew(req.body)) {
