@@ -31,5 +31,12 @@ formRef.addEventListener("submit", (e) => {
         headers: {
             "content-type": "application/json",
         },
-    });
+    })
+        .then((res) => res.json())
+        .then((createdMew) => {
+            console.log(createdMew);
+            formRef.reset();
+            formRef.style.display = "";
+            loadingRef.style.display = "none";
+        });
 });
