@@ -7,11 +7,11 @@ With the following features:
 * Cats can send a mew 😸✉️
 * Cats can see all mews that have been sent 😻🗂
 
-![example-site](example-site.gif)
+![example-site](https://raw.githubusercontent.com/superneutrino8/meower-tweet/master/client/assets/meower-live.jpg)
 
 Created Using NodeJS, Express and MongoDB
 
-[Click Here For Preview](https://dangg-thats-delicious.herokuapp.com/)
+[Click Here For Preview](https://meower-tweets.vercel.app/)
 
 ## Tech Stack
 
