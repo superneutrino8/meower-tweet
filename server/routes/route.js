@@ -4,7 +4,7 @@ const monk = require("monk");
 const Filter = require("bad-words");
 const rateLimit = require("express-rate-limit");
 
-const db = monk("localhost/meower");
+const db = monk(process.env.MONGO_URL || "localhost/meower");
 const mews = db.get("mews");
 const filter = new Filter();
 

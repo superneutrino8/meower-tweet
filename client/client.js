@@ -8,7 +8,10 @@ loadingRef.style.display = "";
 
 const mewsRef = document.querySelector(".mews");
 
-const API_URL = "http://localhost:5000/mews";
+const API_URL =
+    window.location.hostname === "localhost"
+        ? "http://localhost:5000/mews"
+        : "https://meower-server.vivekbariya.vercel.app/mews";
 
 loadAllMews();
 

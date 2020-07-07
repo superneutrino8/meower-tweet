@@ -9,6 +9,6 @@ app.use(express.json());
 
 app.use("/", route);
 
-app.listen(PORT, () => {
+app.listen(5000, () => {
     console.log(`Listening on http://localhost:${PORT}`);
 });
