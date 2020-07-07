@@ -16,3 +16,39 @@
     width: 80%;
     margin: 0 auto;
 }
+
+.mews__single {
+    position: relative;
+    background-color: whitesmoke;
+    border-radius: 25px;
+    margin: 10px;
+    transition: 0.25s ease-in;
+    padding: 28px;
+}
+
+.mews__single h3 {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.mews__single p {
+    font-family: Helvetica, Sans-Serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.mews__single small {
+    font-size: 0.7em;
+    padding: 5px 0;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    color: #ccc;
+}

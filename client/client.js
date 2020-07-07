@@ -53,6 +53,7 @@ function loadAllMews() {
             mews.reverse();
             mews.forEach((mew) => {
                 const div = document.createElement("div");
+                div.classList.add("mews__single");
 
                 const header = document.createElement("h3");
                 header.textContent = mew.name;
